@@ -1,0 +1,14 @@
+<div id=01><h1> DES Encryptor </h1></div>
+<h2> Instructions</h2>
+<ul class= "Instructions">
+  <li> Enter 16 characters</li>
+  <li>Characters should be between 0-9 and A-F </li>
+</ul>
+
+<%= render 'form' %>
+
+<% if !@python_output.nil? %>
+<div class ="output">
+  <span><%= @python_output %> </span>
+</div>
+<% end %>
