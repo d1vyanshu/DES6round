@@ -35,7 +35,7 @@ def gen_key(key):
   key_56=gen_key56(key_64)                          #parity bits dropped
   left_key,right_key = split_key(key_56)            #key split
   round_keys = list()
-  for index in range(16):
+  for index in range(4):                            #changeno
     L=circular_shift(left_key,round_shifts[index])
     R=circular_shift(right_key,round_shifts[index])
     round_key=gen_48bit(L+R)                        #48 bit key generated
@@ -169,13 +169,13 @@ def encrypt(plain_text, sub_keys):
     plain_textb += '{0:04b}'.format(int(plain_text[i], base =16))
   plain_textp = permutation(plain_textb)       #Intital permutation
   left,right = plain_textp[:32],plain_textp[32:]
-  for i in range(15):
+  for i in range(3):                   #changeno
     out = func(right,sub_keys[i])     #function called on right half data
     temp = int(out, base=2) ^ int(left, base=2)   #XOR
     left =right
     right = '{0:032b}'.format(temp)
 
-  out = func(right,sub_keys[15])
+  out = func(right,sub_keys[3])
   temp = int(out, base=2) ^ int(left , base=2)
   left = '{0:032b}'.format(temp)
   final = inv_per(left+right)            #Inverse permutation after 16 rounds
