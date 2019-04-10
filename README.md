@@ -1,24 +1,5 @@
-# README
+### DES Implementation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a program written on ruby on rails developed to encrpyt hexadecimal digits using the DES algorithm. Currently it is configured to encrypt using 4 rounds for the crypto project. It takes an input an passes it as input to the python code to encrypt according to a key. The output is then showed on output.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This web app is deployed at 
