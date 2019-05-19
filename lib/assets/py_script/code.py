@@ -186,7 +186,7 @@ def encrypt(plain_text, sub_keys):
 
 
 
-key_64= '1F430233FB7D1E83'
+key_64= '0A549B68221D6387'
 sub_keys= gen_key(key_64)
 plain_text=str(sys.argv[1])
 cipher_text = encrypt(plain_text,sub_keys)
